@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_file, request, Response
 app = Flask(__name__)
 
 @app.route("/")
@@ -10,5 +10,8 @@ def process():
 	if request.method == 'GET':
 		pass
 	else:
-		pass
+		file = request.files['image'].read()
+		print(file)
+		return Response(file, mimetype='image/jpg')
+			#pass image into classification function
 
