@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import statistics
 #read image and convert to HSV and grayScale
-rawImg = cv2.imread('images/rockWall.jpg')
+rawImg = cv2.imread('../images/rockWall.jpg')
 rawImgHSV = cv2.cvtColor(rawImg,cv2.COLOR_BGR2HSV)
 rawImgGray = cv2.cvtColor(rawImg,cv2.COLOR_BGR2GRAY)
 
@@ -120,7 +120,7 @@ for i in ["white","black","blue","red","yellow","orange","purple","pink"]:
 
 
 cv2.imshow("contours",rawImg)
-
+cv2.waitKey(0)
 
 
     
