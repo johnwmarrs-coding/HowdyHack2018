@@ -1,4 +1,6 @@
 from flask import Flask, send_file, request, Response
+from contours import get_contours
+
 app = Flask(__name__)
 
 @app.route("/")
