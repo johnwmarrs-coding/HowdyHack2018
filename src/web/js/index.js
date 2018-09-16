@@ -54,16 +54,18 @@ document.addEventListener("DOMContentLoaded", function() {
     function goToPicPage() {
         $("#startPic").hide();
         $("#page2").show();
-
     }
 
-    function createColorSelectors() {
-        var t = $.template('<div><img src="${url}" />${name}</div>');
+    function createColorSelectors(picStruct) {
+        for (i = 0; i < picStruct.pics.length(); i++) {
+            var t = $.template('<div id="${index}">${color}</div>');
 
-        $(selector).append( t , {
-            url: jsonObj.url,
-            name: jsonObj.name
-        });
+            $("#colorButtons").append( t , {
+                color: picStruct.colors[i],
+                index: i
+            });
+        }
+
     }
 
 
