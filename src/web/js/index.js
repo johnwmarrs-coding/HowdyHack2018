@@ -1,4 +1,7 @@
+homepage = true;
+
 document.addEventListener("DOMContentLoaded", function() {
+    $("#page2").hide();
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -13,7 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     $("#imgInp").change(function(){
         readURL(this);
-        sendImg(this.files[0])
+        sendImg(this.files[0]);
+        if (homepage===true) {
+
+            goToPicPage();
+        }
 
     });
 
@@ -42,6 +49,21 @@ document.addEventListener("DOMContentLoaded", function() {
             dataType: dataType
         });
         */
+    }
+
+    function goToPicPage() {
+        $("#startPic").hide();
+        $("#page2").show();
+
+    }
+
+    function createColorSelectors() {
+        var t = $.template('<div><img src="${url}" />${name}</div>');
+
+        $(selector).append( t , {
+            url: jsonObj.url,
+            name: jsonObj.name
+        });
     }
 
 
