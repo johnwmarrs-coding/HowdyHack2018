@@ -108,7 +108,12 @@ print(len(roi_gbr_list))
 
 cv2.imshow("raw img 1",rawImg)
 
+<<<<<<< HEAD
 
+=======
+cv2.imshow("contours",rawImg)
+cv2.waitKey(0)
+>>>>>>> 155a7c60c6ef627c83be2abb291761ba602b6186
 
 
     
