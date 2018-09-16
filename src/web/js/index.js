@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function sendImg(pic) {
         formdata = new FormData();
         if (formdata) {
-            formdata.append("image", file);
+            formdata.append("image", pic);
             jQuery.ajax({
                 url: "destination_ajax_file.php",
                 type: "POST",

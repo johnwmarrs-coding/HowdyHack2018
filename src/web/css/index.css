@@ -1,5 +1,4 @@
 
-/*
 .inputfile {
     width: 0.1px;
     height: 0.1px;
@@ -32,4 +31,7 @@
     margin-left:9px;
     margin-right:2px;
 }
-*/
+
+.jumbotron {
+  padding: 0.5em;
+}
