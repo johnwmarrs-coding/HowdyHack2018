@@ -10,7 +10,7 @@ colors = [
     "GREEN",
     "RED",
     "YELLOW",
-    "ORANGE",
+    "ORANGE"
 ]
 
 colorsadded = false;
