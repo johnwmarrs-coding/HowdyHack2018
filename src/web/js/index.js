@@ -3,6 +3,18 @@ picAndColor = {
 
 }
 
+colors = [
+    "WHITE",
+    "BLACK",
+    "BLUE",
+    "GREEN",
+    "RED",
+    "YELLOW",
+    "ORANGE",
+]
+
+colorsadded = false;
+
 document.addEventListener("DOMContentLoaded", function() {
     $("#page2").hide();
     function readURL(input) {
@@ -35,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         $.get("https://reqres.in/api/users", function(data, status){
             console.log("Inside callback");
-            //alert("Data: " + data + "\nStatus: " + status);
+            console.log("Data: " + data + "\nStatus: " + status);
         });
 
         console.log("Before ajax");
@@ -87,12 +99,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function createColorSelectors(object) {
-
+        /*
         i = 0;
         for (var property in object) {
             if (object.hasOwnProperty(property)) {
                 //alert(property+object[property]);
-                var markup = "<div class=\"btn btn-squared-default btn-danger\" id='${index}'>${color}</div>"
+                var markup = "<div class='btn btn-squared-default btn-danger' id='${index}'>${color}</div>"
                 $.template("buttonTemplate",markup);
 
                 $.tmpl("buttonTemplate",{
@@ -105,20 +117,33 @@ document.addEventListener("DOMContentLoaded", function() {
                     color: property,
                     index: i
                 });
-                */
+
             }
             i++;
         }
-        /*
-        for (i = 0; i < picStruct.pics.length(); i++) {
-            var t = $.template('<div id="${index}">${color}</div>');
-
-            $("#colorButtons").append( t , {
-                color: picStruct.colors[i],
-                index: i
-            });
-        }
         */
+        if (colorsadded != true) {
+            for (i = 0; i < colors.length; i++) {
+                var markup = "<div class='btn btn-squared-default' id='${index}'>${color}</div>"
+                $.template("buttonTemplate",markup);
+
+                $.tmpl("buttonTemplate",{
+                    color: colors[i],
+                    index: i
+                }).appendTo("#colorButtons");
+
+                /*
+                var t = $.template("<div class='btn btn-squared-default btn-danger' id='${index}'>${color}</div>");
+
+                $("#colorButtons").append( t , {
+                    color: colors[i],
+                    index: i
+                });
+                */
+            }
+            colorsadded = true;
+        }
+
 
     }
 

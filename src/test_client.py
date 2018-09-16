@@ -1,8 +1,8 @@
 import requests
 
-url = 'http://localhost:5000/climb/api'
+url = '10.230.212.179:5000/climb/api2/'
 
-my_file = open('../TestImages/rockWall.jpg', 'rb')
+my_file = open('rockWall.jpg', 'rb')
 
 files = {'image': my_file}
 

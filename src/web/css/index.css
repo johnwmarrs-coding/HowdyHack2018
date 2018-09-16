@@ -103,3 +103,17 @@ body, html {
     margin:0px;
     padding:0px;
 }
+
+#1 {
+     background-color:white;
+ }
+
+#2 {
+    color:red;
+    background-color:red;
+}
+
+.btn {
+    margin-left:0px;
+    padding-left:0px;
+}
